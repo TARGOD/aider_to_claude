@@ -1,0 +1,21 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "claude-2"
+version = "0.1.0"
+description = "Transcript analyzer application with Gemini integration"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "google-generativeai",
+    "pydantic",
+    "python-dotenv",
+]
+
+[project.scripts]
+main = "src.main:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
